@@ -27,6 +27,7 @@ class CreateNewUserCest
         $I->fillField('username', 'admin');
         $I->fillField('password', 'admin');
         $I->click('login');
+        $I->see('uscita');
 
         $I->click('Sistema');
         $I->click('Utenti');
@@ -45,16 +46,57 @@ class CreateNewUserCest
         
         $I->click('OK');
 
-        $I->see($this->name);
-        $I->see($this->surname);
-        $I->see($this->title);
-        $I->see($this->company_name);
-        $I->see($this->birth_date);
-        $I->see($this->birth_place);
-        $I->see($this->social_security_number);
-        $I->see($this->landline);
-        $I->see($this->mobile);
+    }
+
+    public function createNewUserSuccess(AcceptanceTester $I)
+    {
+
+        $I->amOnPage('/');
+        $I->see('Gutenberg');
+        $I->fillField('username', 'admin');
+        $I->fillField('password', 'admin');
+        $I->click('login');
+        $I->see('uscita');
+
+        $I->click('Sistema');
+        $I->click('Utenti');
         $I->see($this->email);
 
     }
+
+    public function deleteNewUser(AcceptanceTester $I)
+    {
+
+        $I->amOnPage('/');
+        $I->see('Gutenberg');
+        $I->fillField('username', 'admin');
+        $I->fillField('password', 'admin');
+        $I->click('login');
+        $I->see('uscita');
+
+        $I->click('Sistema');
+        $I->click('Utenti');
+        $I->see($this->email);
+        $I->click($this->surname.' '.$this->name);
+        $I->click('elimina');
+        $I->acceptPopup();
+
+    }
+
+    public function deleteNewUserSuccess(AcceptanceTester $I)
+    {
+
+        $I->amOnPage('/');
+        $I->see('Gutenberg');
+        $I->fillField('username', 'admin');
+        $I->fillField('password', 'admin');
+        $I->click('login');
+        $I->see('uscita');
+
+        $I->click('Sistema');
+        $I->click('Utenti');
+        $I->dontSee($this->email);
+
+    }
+
 }
