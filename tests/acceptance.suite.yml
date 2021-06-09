@@ -1,0 +1,27 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+    enabled:
+<<<<<<< HEAD
+        - PhpBrowser:
+            url: http://alfa.gerp.be
+
+=======
+        - WebDriver:
+            url: http://alfa.gerp.be
+            window_size: false
+            port: 9515
+            browser: chrome
+            capabilities:
+                chromeOptions:
+                    args: ["--headless", "--disable-gpu"]
+                    prefs:
+                        download.default_directory: "..."
+>>>>>>> de72f96 (using web browser)
+        - \Helper\Acceptance
+    step_decorators: ~        
