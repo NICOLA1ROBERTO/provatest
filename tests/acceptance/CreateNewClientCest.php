@@ -28,7 +28,7 @@ class CreateNewClientCest
     // tests
     public function createClient(AcceptanceTester $I)
     {
-        $I->login();
+        $I->login($I);
         $I->click('Vendite');
 
         $I->click('Clienti');

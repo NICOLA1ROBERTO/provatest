@@ -5,7 +5,7 @@ class RicercaEtichetteCest
     public function crea(AcceptanceTester $I)
     {
 
-        $I->login();
+        $I->login($I);
         $I->click('Prodotti');
 
         $I->click('Articoli');

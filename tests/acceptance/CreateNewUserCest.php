@@ -21,13 +21,7 @@ class CreateNewUserCest
     // tests
     public function createNewUser(AcceptanceTester $I)
     {
-
-        $I->amOnPage('/');
-        $I->see('Gutenberg');
-        $I->fillField('username', 'admin');
-        $I->fillField('password', 'admin');
-        $I->click('login');
-        $I->see('uscita');
+        $I->login($I);
 
         $I->click('Sistema');
         $I->click('Utenti');
@@ -46,17 +40,18 @@ class CreateNewUserCest
         
         $I->click('OK');
 
+        $this->createNewUserSuccess($I);
+
+        $this->deleteNewUser($I);
+
+        $this->deleteNewUserSuccess($I);
+
     }
 
-    public function createNewUserSuccess(AcceptanceTester $I)
+    private function createNewUserSuccess(AcceptanceTester $I)
     {
 
         $I->amOnPage('/');
-        $I->see('Gutenberg');
-        $I->fillField('username', 'admin');
-        $I->fillField('password', 'admin');
-        $I->click('login');
-        $I->see('uscita');
 
         $I->click('Sistema');
         $I->click('Utenti');
@@ -64,15 +59,10 @@ class CreateNewUserCest
 
     }
 
-    public function deleteNewUser(AcceptanceTester $I)
+    private function deleteNewUser(AcceptanceTester $I)
     {
 
         $I->amOnPage('/');
-        $I->see('Gutenberg');
-        $I->fillField('username', 'admin');
-        $I->fillField('password', 'admin');
-        $I->click('login');
-        $I->see('uscita');
 
         $I->click('Sistema');
         $I->click('Utenti');
@@ -83,15 +73,10 @@ class CreateNewUserCest
 
     }
 
-    public function deleteNewUserSuccess(AcceptanceTester $I)
+    private function deleteNewUserSuccess(AcceptanceTester $I)
     {
 
         $I->amOnPage('/');
-        $I->see('Gutenberg');
-        $I->fillField('username', 'admin');
-        $I->fillField('password', 'admin');
-        $I->click('login');
-        $I->see('uscita');
 
         $I->click('Sistema');
         $I->click('Utenti');
