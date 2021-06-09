@@ -1,20 +1,13 @@
 {
-
-
     "require-dev": {
         "codeception/codeception": "^4.1",
         "codeception/module-phpbrowser": "^1.0.0",
         "codeception/module-asserts": "^1.0.0",
-<<<<<<< HEAD
-	"codeception/module-webdriver": "1.0.0"
-=======
-	"codeception/module-webdriver": "^1.2"
->>>>>>> de72f96 (using web browser)
+	   "codeception/module-webdriver": "^1.2",
+	   "codeception/module-webdriver": "^1.2"
     },
 
     "config" : {
-
         "secure-http": false
     }
-
 }

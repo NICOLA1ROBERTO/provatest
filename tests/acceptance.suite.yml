@@ -7,11 +7,6 @@
 actor: AcceptanceTester
 modules:
     enabled:
-<<<<<<< HEAD
-        - PhpBrowser:
-            url: http://alfa.gerp.be
-
-=======
         - WebDriver:
             url: http://alfa.gerp.be
             window_size: false
@@ -22,6 +17,5 @@ modules:
                     args: ["--headless", "--disable-gpu"]
                     prefs:
                         download.default_directory: "..."
->>>>>>> de72f96 (using web browser)
         - \Helper\Acceptance
     step_decorators: ~        
