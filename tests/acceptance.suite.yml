@@ -19,3 +19,7 @@ modules:
                         download.default_directory: "..."
         - \Helper\Acceptance
     step_decorators: ~        
+extensions:
+    enabled:
+        - Codeception\Extension\RunProcess:
+            - /usr/bin/chromedriver --url-base=/wd/hub
