@@ -29,7 +29,7 @@ class Acceptance extends \Codeception\Module
 
         // Regain focus by typing the last letter ('m')
         $I->pressKey('//*[@id="'.$element.'"]', $input[strlen($input) - 1]);
-        $I->wait(0.5);
+        $I->wait(1.5);
         
         // pressKey() doesn't lose focus, so the options are visible
         $I->click('//*[@id="ui-id-1"]/li[1]');
