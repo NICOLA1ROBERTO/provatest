@@ -8,7 +8,7 @@ class Acceptance extends \Codeception\Module
 {
 	public function login($I)
 	{
-		$I->amOnPage('/');
+        $I->amOnPage('/');
         $I->see('Gutenberg');
         $I->fillField('username', 'admin');
         $I->fillField('password', 'admin');
