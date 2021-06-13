@@ -23,4 +23,4 @@ extensions:
     enabled:
         - Codeception\Extension\RunProcess:
             0: /usr/bin/chromedriver --url-base=/wd/hub
-            sleep: 1
+            sleep: 5
