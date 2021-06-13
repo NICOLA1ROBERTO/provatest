@@ -29,7 +29,7 @@ class CreateNewClientCest
 
         $I->fillField('cod_esterno', $this->random_code);
 
-        $I->fillField('codice_fiscale', '000');
+        $I->fillField('codice_fiscale', 'WYNBRC78D17H501R');
         $I->click('OK');
 
         $I->see($this->client_name);
@@ -55,18 +55,18 @@ class CreateNewClientCest
         $I->fillField('testo_ric', $this->random_code);
         $I->click('vai');
 
-        $I->see($this->client_name);
+        $I->see('Cliente - '.$this->client_name.' - '.$this->client_city);
     }
 
     private function deleteClient(AcceptanceTester $I)
     {
         $I->click('Vendite');
-
         $I->click('Clienti');
 
-        $I->click($this->client_name);
+        $I->click($this->client_name, '//*[@id="gerp-main-left"]/div[5]/table/tbody/tr[2]/td[3]');
         $I->click('elimina');
         $I->acceptPopup();
+        
         $I->dontSee($this->client_name);
     }
 }

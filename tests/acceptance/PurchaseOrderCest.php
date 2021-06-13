@@ -7,7 +7,7 @@ class PurchaseOrderCest
         $I->login($I);
         $I->click('Prodotti');
 
-        $I->click('Ordini a fornitore');
+        $I->click('Ordini a Fornitore');
         $I->click('nuovo');
 
         $I->see('Fornitore');
