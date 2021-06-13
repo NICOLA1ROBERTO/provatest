@@ -36,7 +36,7 @@ class CreateNewClientCest
         $I->see($this->client_city);
         $I->see($this->client_person);
 
-        $I->checkForPhpNoticesOrWarnings();
+        // $I->checkForPhpNoticesOrWarnings();
 
         $I->click('Sedi');
         $I->click('nuova');
