@@ -4,7 +4,6 @@ class PurchaseOrderCest
 {
     public function crea(AcceptanceTester $I)
     {
-
         $I->login($I);
         $I->click('Prodotti');
 
@@ -12,15 +11,10 @@ class PurchaseOrderCest
         $I->click('nuovo');
 
         $I->see('Fornitore');
-
-
-
-
     }
 
     public function creaDaFornitore(AcceptanceTester $I)
     {
-
         $I->login($I);
         $I->click('Prodotti');
 
@@ -30,13 +24,8 @@ class PurchaseOrderCest
         $I->click('nuovo ordine a fornitore');
         $I->click('OK');
 
-
         $I->see('Fornitore');
-
-
     }
-
-
 
     public function cerca(AcceptanceTester $I)
     {

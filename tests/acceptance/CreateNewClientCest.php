@@ -1,29 +1,18 @@
 <?php
 
-
 class CreateNewClientCest
 {
-
-
     private $client_name = 'Wayne Enterprise';
     private $client_person = 'Bruce Wayne';
     private $client_city = 'Gotham City';
-
     private $client_location = 'Batcave';
-
     private $client_address_location = 'Wayne "Manor" underground';
-
-
     private $random_code;
 
     public function _before(AcceptanceTester $I)
     {
         $this->random_code = 'C'.rand();
-
-
     }
-
-
 
     // tests
     public function createClient(AcceptanceTester $I)
@@ -56,27 +45,17 @@ class CreateNewClientCest
         $I->click('OK');
         $I->see($this->client_address_location);
 
-
         $this->searchClientMainSearch($I);
 
         $this->deleteClient($I);
-
-
-
     }
 
     private function searchClientMainSearch(AcceptanceTester $I)
     {
-
-
-
         $I->fillField('testo_ric', $this->random_code);
         $I->click('vai');
 
         $I->see($this->client_name);
-
-
-
     }
 
     private function deleteClient(AcceptanceTester $I)
@@ -89,10 +68,5 @@ class CreateNewClientCest
         $I->click('elimina');
         $I->acceptPopup();
         $I->dontSee($this->client_name);
-        
-
-
     }
-
-
 }

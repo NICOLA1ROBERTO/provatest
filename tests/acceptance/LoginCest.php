@@ -1,10 +1,7 @@
 <?php
 
-
 class LoginCest
 {
-
-
     public function loginSuccess(AcceptanceTester $I)
     {
         $I->amOnPage('/');
@@ -14,7 +11,6 @@ class LoginCest
 
         $I->click('login');
         $I->see('uscita');
-
     }
 
     public function loginFailed(AcceptanceTester $I)
@@ -27,6 +23,5 @@ class LoginCest
         $I->click('login');
         $I->see('Password Errata');
         $I->dontSee('uscita');
-
     }
 }

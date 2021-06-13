@@ -2,7 +2,6 @@
 
 class CreateAccompanyingInvoiceCest
 {
-
     private $document = 'Fattura di vendita accopagnatoria';
     private $client = 'Telecom';
     private $code = 'AB1';
@@ -18,7 +17,6 @@ class CreateAccompanyingInvoiceCest
     // tests
     public function createAccompanyingInvoice(AcceptanceTester $I)
     {
-
         $I->login($I);
 
         $I->click('Vendite');
@@ -44,17 +42,13 @@ class CreateAccompanyingInvoiceCest
         $I->click('salva');
 
         $this->accompanyingInvoiceSuccess($I);
-
     }
 
     private function accompanyingInvoiceSuccess(AcceptanceTester $I)
     {
-
         $I->see($this->client);
         $I->see($this->expected_price_goods, '//*[@id="gerp-main-left"]/div[7]/table/tbody/tr[1]/td[2]');
         $I->see($this->expected_price_services, '//*[@id="gerp-main-left"]/div[7]/table/tbody/tr[2]/td[2]');
         $I->see($this->expected_total, '//*[@id="gerp-main-left"]/div[7]/table/tbody/tr[4]/td[2]');
-
     }
-
 }

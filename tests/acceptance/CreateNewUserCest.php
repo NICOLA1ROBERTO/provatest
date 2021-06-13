@@ -2,7 +2,6 @@
 
 class CreateNewUserCest
 {
-
     private $name = 'Pinco';
     private $surname = 'Pallino';
     private $title = 'CEO';
@@ -45,23 +44,19 @@ class CreateNewUserCest
         $this->deleteNewUser($I);
 
         $this->deleteNewUserSuccess($I);
-
     }
 
     private function createNewUserSuccess(AcceptanceTester $I)
     {
-
         $I->amOnPage('/');
 
         $I->click('Sistema');
         $I->click('Utenti');
         $I->see($this->email);
-
     }
 
     private function deleteNewUser(AcceptanceTester $I)
     {
-
         $I->amOnPage('/');
 
         $I->click('Sistema');
@@ -70,18 +65,14 @@ class CreateNewUserCest
         $I->click($this->surname.' '.$this->name);
         $I->click('elimina');
         $I->acceptPopup();
-
     }
 
     private function deleteNewUserSuccess(AcceptanceTester $I)
     {
-
         $I->amOnPage('/');
 
         $I->click('Sistema');
         $I->click('Utenti');
         $I->dontSee($this->email);
-
     }
-
 }
