@@ -31,16 +31,16 @@ composer install\
 
 ### Create a new service file
 cd /etc/systemd/system\
-sudo vim chromedriver.service\
+sudo vim chromedriver.service
 
 [Unit]\
 Description=Run Chromedriver\
-After=network.target\
+After=network.target
 
 [Service]\
 ExecStart=/path/to/chromedriver.sh\
 User=user\
-Group=group\
+Group=group
 
 [Install]\
 WantedBy=multi-user.target
