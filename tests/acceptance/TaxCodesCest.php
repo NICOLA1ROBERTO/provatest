@@ -18,9 +18,9 @@ class TaxCodesCest
     // tests
     public function createTaxCode(AcceptanceTester $I)
     {
-        $I->amOnUrl('http://localhost/gerp');
         $I->login($I);
 
+        $I->click('Sistema');
         $I->click('Configurazione');
         $I->click('Iva - codici');
         $I->click('nuovo');

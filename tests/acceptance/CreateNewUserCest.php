@@ -20,7 +20,6 @@ class CreateNewUserCest
     // tests
     public function createNewUser(AcceptanceTester $I)
     {
-        $I->amOnPage('/');
         $I->login($I);
 
         $I->click('Sistema');

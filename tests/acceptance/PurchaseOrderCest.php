@@ -4,7 +4,6 @@ class PurchaseOrderCest
 {
     public function crea(AcceptanceTester $I)
     {
-        $I->amOnPage('/');
         $I->login($I);
         $I->click('Prodotti');
 
@@ -16,7 +15,6 @@ class PurchaseOrderCest
 
     public function creaDaFornitore(AcceptanceTester $I)
     {
-        $I->amOnPage('/');
         $I->login($I);
         $I->click('Prodotti');
 

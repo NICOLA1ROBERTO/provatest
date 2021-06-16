@@ -17,7 +17,6 @@ class CreateAccompanyingInvoiceCest
     // tests
     public function createAccompanyingInvoice(AcceptanceTester $I)
     {
-        $I->amOnPage('/');
         $I->login($I);
 
         $I->click('Vendite');
