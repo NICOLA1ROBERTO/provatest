@@ -17,6 +17,7 @@ class CreateNewClientCest
     // tests
     public function createClient(AcceptanceTester $I)
     {
+        $I->amOnPage('/');
         $I->login($I);
         $I->click('Vendite');
 
